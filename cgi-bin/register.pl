@@ -10,7 +10,7 @@ my $newlastname = $q->param('newlastname');
 my $newfirstname = $q->param('newfirstname');
 
 my $dsn = "DBI:mysql:database=datospaginaxml;host=127.0.0.1";
-my $dbh = DBI->connect($dsn, "Alex", "") or die "No se pudo conectar";
+my $dbh = DBI->connect($dsn, "root", "") or die "No se pudo conectar";
 
 #Antes de crear un nuevo registro, podriamos comprobar que los datos
 #no esten vacios. En ese caso, tendriamos que hacer pequeñas modificaciones
