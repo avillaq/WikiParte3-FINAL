@@ -10,7 +10,7 @@ my $dsn = "DBI:mysql:database=datospaginafinal;host=127.0.0.1";
 my $dbh = DBI->connect($dsn, "root", "") or die "No se pudo conectar";
 
 my $titulo = $q->param('titulo');
-my $usuario = $q->param('usuario');
+my $usuario = $q->param('user');
 
 my $sth = $dbh->prepare("select text from articles where title=? and owner=?");
 $sth->execute($titulo, $usuario);

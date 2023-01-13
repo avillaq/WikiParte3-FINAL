@@ -322,7 +322,7 @@ function doDelete(owner, title){
  */
 function doEdit(owner, title){
   console.log('se va a editarA;',owner,title);
-  let url = 'cgi-bin/article.pl?owner='+owner+'&title='+title;
+  let url = 'cgi-bin/article.pl?user='+owner+'&titulo='+title;
   console.log("la url es ",url);
   var xml;
   let promise = fetch(url);
@@ -371,9 +371,9 @@ function responseEdit(xml){
 function doUpdate(title){
   let texto = document.getElementById('cuadrotext').value;
   console.log("es el texto a actualizar",texto);
-  let url1 = 'cgi-bin/update.pl?title='+title+'&text='
+  let url1 = 'cgi-bin/update.pl?titulo='+title+'&texto='
   let textoencode = encodeURIComponent(texto);
-  let url3 = '&owner='+userKey;
+  let url3 = '&user='+userKey;
   let urlcomple= url1+textoencode+url3;
   console.log("url completa",urlcomple);
   var response;
