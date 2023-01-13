@@ -13,22 +13,15 @@ my $dbh = DBI->connect($dsn, "root", "") or die "No se pudo conectar";
 my $sth = $dbh->prepare("select title from articles where owner = ?");
 $sth->execute($usuario);
 
-my @misTitulos;
-my $i = 0;
+
+my $contenido = "";
 while(my @array = $sth->fetchrow_array()){
-  $misTitulos[$i] = $array[0];
-  $i++;
+  $contenido .= "<article><owner>$usuario</owner><title>$array[0]</title></article>";
 }
 
 $sth->finish;
 $dbh->disconnect;
 
-my $contenido = "";
-if(@misTitulos != 0){
-  foreach my $j(@misTitulos){
-      $contenido .= "<article><owner>$usuario</owner><title>$j</title></article>";
-  }
-}
 print $q->header('text/xml');    
 print<<XML;
 <?xml version='1.0' encoding='utf-8'?>

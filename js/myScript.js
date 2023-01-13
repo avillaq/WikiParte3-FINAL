@@ -217,7 +217,7 @@ function doNew(){
   console.log("datos recogidos:",title,texto);
   let url1 = 'cgi-bin/new.pl?titulo='+title+'&texto='
   let textoencode = encodeURIComponent(texto);
-  let url3 = '&user='+userKey+'&esNuevo=true';
+  let url3 = '&user='+userKey;
   let urlcomple= url1+textoencode+url3;
   console.log(urlcomple)
   var response;
