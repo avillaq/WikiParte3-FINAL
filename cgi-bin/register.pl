@@ -9,7 +9,7 @@ my $newpassword = $q->param('newpassword');
 my $newlastname = $q->param('newlastname');
 my $newfirstname = $q->param('newfirstname');
 
-my $dsn = "DBI:mysql:database=datospaginaxml;host=127.0.0.1";
+my $dsn = "DBI:mysql:database=datospaginafinal;host=127.0.0.1";
 my $dbh = DBI->connect($dsn, "root", "") or die "No se pudo conectar";
 
 #Antes de crear un nuevo registro, podriamos comprobar que los datos

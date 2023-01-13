@@ -10,7 +10,7 @@ my $texto = $q->param('texto');
 my $usuario = $q->param('usuario');
 my $isNuevo = $q->param('esNuevo');
 
-my $dsn = "DBI:mysql:database=datospaginaxml;host=127.0.0.1";
+my $dsn = "DBI:mysql:database=datospaginafinal;host=127.0.0.1";
 my $dbh = DBI->connect($dsn, "root", "") or die "No se pudo conectar";
 
 my $sth = $dbh->prepare("Select userName from users where userName=?");

@@ -6,7 +6,7 @@ my $q = CGI->new;
 my $name = $q->param('user');############################
 my $password = $q->param('password');
 
-my $dsn = "DBI:mysql:database=datospaginaxml;host=127.0.0.1";
+my $dsn = "DBI:mysql:database=datospaginafinal;host=127.0.0.1";
 my $dbh = DBI->connect($dsn, "root", "") or die "No se pudo conectar";
     
 my $sth = $dbh->prepare("SELECT firstname, lastname FROM users WHERE userName=? AND password=?");
