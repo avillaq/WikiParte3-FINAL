@@ -1,5 +1,5 @@
-var userFullName = '';
-var userKey = '';
+var userFullName = 'Alexander';
+var userKey = 'alex';
 
 window.addEventListener('load', showWelcome);
 function showWelcome(){

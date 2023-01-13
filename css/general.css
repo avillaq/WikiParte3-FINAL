@@ -1,0 +1,17 @@
+
+body {
+    background: #cdffff;
+    font-family: 'Open Sans', sans-serif;
+}
+.wrap{
+    width: 70%;
+    margin: auto;
+}
+a {
+    padding: 8px;
+    background: crimson;
+
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
