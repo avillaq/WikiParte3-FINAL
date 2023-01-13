@@ -303,7 +303,7 @@ function responseView(response){
  */
 function doDelete(owner, title){
   console.log('se va a eliminar',owner,title);
-  let url = 'cgi-bin/delete.pl?owner='+owner+'&title='+title;
+  let url = 'cgi-bin/delete.pl?user='+owner+'&titulo='+title;
   console.log("la url es ",url);
   var xml;
   let promise = fetch(url);
