@@ -7,7 +7,7 @@ use DBI;
 my $q = CGI->new;
 my $titulo = $q->param('titulo');
 my $texto = $q->param('texto');
-my $usuario = $q->param('usuario');
+my $usuario = $q->param('user');
 my $isNuevo = $q->param('esNuevo');
 
 my $dsn = "DBI:mysql:database=datospaginafinal;host=127.0.0.1";

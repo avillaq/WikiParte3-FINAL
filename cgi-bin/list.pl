@@ -5,7 +5,7 @@ use CGI;
 use DBI;
 
 my $q = CGI->new;
-my $usuario = $q->param('usuario');
+my $usuario = $q->param('user');
 
 my $dsn = "DBI:mysql:database=datospaginafinal;host=127.0.0.1";
 my $dbh = DBI->connect($dsn, "root", "") or die "No se pudo conectar";

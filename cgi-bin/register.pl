@@ -4,10 +4,10 @@ use CGI;
 use DBI;
 
 my $q = CGI->new;
-my $newname = $q->param('newname');
-my $newpassword = $q->param('newpassword');
-my $newlastname = $q->param('newlastname');
-my $newfirstname = $q->param('newfirstname');
+my $newname = $q->param('user');
+my $newpassword = $q->param('password');
+my $newlastname = $q->param('lastname');
+my $newfirstname = $q->param('firstname');
 
 my $dsn = "DBI:mysql:database=datospaginafinal;host=127.0.0.1";
 my $dbh = DBI->connect($dsn, "root", "") or die "No se pudo conectar";

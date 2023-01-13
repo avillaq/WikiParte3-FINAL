@@ -113,8 +113,8 @@ function doCreateAccount(){
   let lastName = document.getElementById('lastname').value;
   let password = document.getElementById('password').value;
   console.log("datos recogidos:",user,firstname,lastname,password);
-  let url = 'cgi-bin/register.pl?userName='+user+'&password='+password+'&firstName='+
-    firstName+'&lastName='+lastName;
+  let url = 'cgi-bin/register.pl?user='+user+'&password='+password+'&firstname='+
+    firstName+'&lastname='+lastName;
   console.log(url);
   var xml;
   let promise = fetch(url);
@@ -134,7 +134,7 @@ function doCreateAccount(){
  */
 function doList(){
   console.log("este es el owne que sera enviado al cgi",userKey);
-  let url = 'cgi-bin/list.pl?owner='+userKey;
+  let url = 'cgi-bin/list.pl?user='+userKey;
   console.log("este cgi se usara",url);
   let promise = fetch(url);
   promise.then(response=>response.text()).then(data=>
@@ -215,9 +215,9 @@ function doNew(){
   let title  = document.getElementById('titulo').value;
   let texto = document.getElementById('cuadrotext').value;
   console.log("datos recogidos:",title,texto);
-  let url1 = 'cgi-bin/new.pl?title='+title+'&text='
+  let url1 = 'cgi-bin/new.pl?titulo='+title+'&texto='
   let textoencode = encodeURIComponent(texto);
-  let url3 = '&owner='+userKey;
+  let url3 = '&user='+userKey+'&esNuevo=true';
   let urlcomple= url1+textoencode+url3;
   console.log(urlcomple)
   var response;
