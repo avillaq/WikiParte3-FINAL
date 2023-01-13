@@ -5,11 +5,11 @@ use CGI;
 use DBI;
 my $q = CGI->new;
 
+my $usuario = $q->param('user');
+my $titulo = $q->param('titulo');
+
 my $dsn = "DBI:mysql:database=datospaginafinal;host=127.0.0.1";
 my $dbh = DBI->connect($dsn, "root", "") or die "No se pudo conectar";
-
-my $usuario = $q->param('usuario');
-my $titulo = $q->param('titulo');
 
 my $sth = $dbh->prepare("select text from articles where title=? AND owner=?");
 $sth->execute($titulo, $usuario);
@@ -20,7 +20,6 @@ my @array = $sth->fetchrow_array();
 $sth->finish;
 $dbh->disconnect;
 
-if (@array != 0) {
      my $text = $array[0];
 
      $text =~ s/\n/ /g;
@@ -67,31 +66,11 @@ if (@array != 0) {
 #Devolvemos el texto markdown en formato html
 print $q->header('text/html');
 print<<HTML;
-<!DOCTYPE html>
-<html>
-<head>
-     <link rel="stylesheet" href="../styles/general.css">
-     <title>Wikipedia 0.1</title>
-</head>
-<body>
-     <div class="wrap">
-           $contenido
-     </div>
-</body>
-</html>
+$contenido
 HTML
 
-}
 
-#Si los datos son incorrectos devolvemos un xml vacio
-else{
-print $q->header('text/xml');    
-print<<XML;
-<?xml version='1.0' encoding='utf-8'?>
-    <article>
-    </article>
-XML
-}
+
 
 
 

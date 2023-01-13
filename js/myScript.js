@@ -268,7 +268,7 @@ function responseNew(response){
  */
 function doView(owner, title){
   console.log('se va a visualizar');
-  let url = 'cgi-bin/view.pl?owner='+owner+'&title='+title;
+  let url = 'cgi-bin/view.pl?user='+owner+'&titulo='+title;
   console.log("la url es ",url);
   var response;
   let promise = fetch(url);
