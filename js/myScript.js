@@ -199,8 +199,8 @@ function showNew(){
   formhtml += `
              <label>Titulo</label>
              <input type = "text" id="titulo" name ="titulo" value= ""><br>
-             <label > texto</label>
-             <textarea style = "width:180px; height:150px" id = "cuadrotext" name ="texto"></textarea>          `+`<button onclick ="doNew()">Enviar</button>`+`
+             <label >Texto</label>
+             <textarea style = "width:180px; height:150px" id = "cuadrotext" name ="texto"></textarea><br>`+`<button onclick ="doNew()">Enviar</button>`+`
                  <button onclick = "doList()">Cancelar</button>`;
   document.getElementById('main').innerHTML = formhtml;
 }
@@ -355,8 +355,8 @@ function responseEdit(xml){
   var formhtml = "";
   formhtml += `
              <label>Titulo</label>
-             <h1>`+title+`</h1><br>
-             <label > texto</label>
+             <h1>`+title+`</h1>
+             <label>Texto</label>
              <textarea style = "width:180px; height:150px" id = "cuadrotext" name ="texto">`+
     texto+`</textarea><br>
              <button onclick ="doUpdate(`+`'`+title+`'`+`)">Actualizar</button>`+`

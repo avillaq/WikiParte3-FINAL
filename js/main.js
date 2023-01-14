@@ -5,7 +5,7 @@ window.addEventListener('load', showWelcome);
 function showWelcome(){
   let html = '<h2>Bienvenido ' + userFullName + '</h2>\n';
   html += `
-          <p>Este sistema fue desarrollado por alumnos del primer año de la Escuela Profesional de Ingeniería de Sistemas, de la Universidad Nacional de San Agustín de Arequipa</p>
+          <p>Este sistema fue desarrollado por un alumno del primer año de la Escuela Profesional de Ingeniería de Sistemas, de la Universidad Nacional de San Agustín de Arequipa</p>
           <p>El sistema fué desarrollado usando estas tecnologías:</p>
           <ul>
             <li>HTML y CSS</li>
